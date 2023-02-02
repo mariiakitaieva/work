@@ -1,4 +1,4 @@
-import platform, os
+import platform
 OS_info = platform.uname()
 #OS_info2 = platform.system()
 #OS_info3 = platform.release()
