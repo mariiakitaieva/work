@@ -1,7 +1,4 @@
-import platform
-OS_info = platform.uname()
-#OS_info2 = platform.system()
-#OS_info3 = platform.release()
-#OS_info4 = platform.os.name
-print(OS_info)
-print("the name of OS is: ", OS_info[0], OS_info[2])
+if __name__ == '__main__':
+    import platform
+    os_info = platform.uname()
+    print(f'the name of OS is {os_info[0]} {os_info[2]}')
