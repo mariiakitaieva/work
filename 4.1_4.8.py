@@ -24,31 +24,20 @@ if __name__ == '__main__':
     command2 = set(command2.split()[-1].split(','))
     result = sorted(list(command1.intersection(command2)))
     print(f"{result}")
+#6
+    ospf_route = "       10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+    list1 = ospf_route.replace(",", "").replace("via", "").split()
+    list2 = ["Prefix", "AD/Metric", "Next-Hop", "Last update", "Outbound Interface"]
+    for list1, list2 in zip(list1, list2):
+        print('{:20}{:20}'.format(list2, list1))
 
 #7
     mac = "AAAA:BBBB:CCCC"
     result = bin(int(''.join(mac.split(':')), 16)).strip('0b')
     print(f'{result}')
-#6
-'''Обработать строку ospf_route и вывести информацию на стандартный поток вывода в виде:
-
-Prefix                10.0.24.0/24
-AD/Metric             110/41
-Next-Hop              10.0.13.3
-Last update           3d18h
-Outbound Interface    FastEthernet0/0
-Ограничение: Все задания надо выполнять используя только пройденные темы.
- ospf_route = "       10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"'''
 
 #8
-'''Преобразовать IP-адрес в переменной ip в двоичный формат и вывести на стандартный поток вывода вывод столбцами, таким образом:
-первой строкой должны идти десятичные значения байтов
-второй строкой двоичные значения
-Вывод должен быть упорядочен также, как в примере:
-столбцами
-ширина столбца 10 символов (в двоичном формате надо добавить два пробела между столбцами для разделения октетов между собой)
-Пример вывода для адреса 10.1.1.1:
-10        1         1         1
-00001010  00000001  00000001  00000001
-Ограничение: Все задания надо выполнять используя только пройденные темы.
-ip = "192.168.3.1"'''
+    ip = "192.168.3.1"
+    oct1, oct2, oct3, oct4 = ip.split('.')
+    print(f'{int(oct1):1} {int(oct2):8} {int(oct3):6} {int(oct4):8}')
+    print(f'{int(oct1):08b} {int(oct2):08b} {int(oct3):08b} {int(oct4):08b}')
